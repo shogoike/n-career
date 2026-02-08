@@ -133,13 +133,20 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ===== A. ファーストビュー（ロイヤルグリーン背景） ===== */}
+      {/* ===== A. ファーストビュー（ロイヤルグリーン背景 + 動画） ===== */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
-        {/* テクスチャ背景 */}
-        <div
-          className="absolute inset-0 opacity-20 mix-blend-overlay"
-          style={{ backgroundImage: 'url(/images/14.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-        ></div>
+        {/* 背景動画 */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        >
+          <source src="/images/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* オーバーレイ */}
+        <div className="absolute inset-0 bg-[#014421]/70"></div>
         {/* 背景装飾 */}
         <div className="absolute top-10 right-0 w-96 h-96 bg-green-400 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-400 rounded-full opacity-10 blur-3xl"></div>
