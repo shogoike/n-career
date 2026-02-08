@@ -231,10 +231,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-center lg:text-left animate-fade-in-up">
             {/* バッジ */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-6 shadow-lg">
-              <span className="animate-pulse-slow">🔥</span>
-              体育会・アスリート専門
-              <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">未経験9割</span>
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur border border-white/30 text-white rounded-full text-sm font-medium mb-6">
+              <span className="px-3 py-1 bg-yellow-400 text-gray-900 rounded-full text-xs font-bold">体育会専門</span>
+              <span className="text-green-200">アスリートのキャリア支援</span>
             </div>
 
             <h1 className="text-[21px] sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-snug">
