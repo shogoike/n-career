@@ -174,11 +174,19 @@ export default function Home() {
               <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">未経験9割</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight">
-              書類作成、面接対策、条件交渉——<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
-                全部まるっと無料
-              </span>でサポート。
+            <h1 className="text-[21px] sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-snug">
+              {/* モバイル用 */}
+              <span className="sm:hidden">
+                書類作成、面接対策、<br />
+                条件交渉——<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">全部まるっと無料</span><br />
+                でサポート。
+              </span>
+              {/* デスクトップ用 */}
+              <span className="hidden sm:inline">
+                書類作成、面接対策、条件交渉——<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">全部まるっと無料</span>でサポート。
+              </span>
             </h1>
 
             <p className="text-base sm:text-lg lg:text-xl text-green-100 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
