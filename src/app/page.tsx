@@ -419,7 +419,9 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://lin.ee/z5If9Wl"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full font-bold text-lg bg-green-500 text-white hover:bg-green-600 transition inline-flex items-center justify-center gap-2"
               >
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
