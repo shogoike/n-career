@@ -135,6 +135,11 @@ export default function Home() {
 
       {/* ===== A. ファーストビュー（ロイヤルグリーン背景） ===== */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 */}
+        <div
+          className="absolute inset-0 opacity-20 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/14.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
         {/* 背景装飾 */}
         <div className="absolute top-10 right-0 w-96 h-96 bg-green-400 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-400 rounded-full opacity-10 blur-3xl"></div>
@@ -203,8 +208,13 @@ export default function Home() {
       </section>
 
       {/* ===== B. サービスの価値の束 ===== */}
-      <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421]">
-        <div className="max-w-7xl mx-auto">
+      <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 */}
+        <div
+          className="absolute inset-0 opacity-10 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/10.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-10 scroll-animate">
             <div className="inline-block px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
               すべて0円
@@ -242,8 +252,13 @@ export default function Home() {
       </section>
 
       {/* ===== C. 不安の列挙 → 否定 ===== */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421]">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 - 壁を突き破るイメージ */}
+        <div
+          className="absolute inset-0 opacity-15 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/6.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        <div className="max-w-4xl mx-auto relative">
           <div className="text-center mb-10 scroll-animate">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
               こんな不安、<span className="text-yellow-400">全部解消</span>します
@@ -279,6 +294,11 @@ export default function Home() {
 
       {/* ===== D. 根拠の提示（数字カウントアップ） ===== */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] text-white relative overflow-hidden">
+        {/* テクスチャ背景 - メタル */}
+        <div
+          className="absolute inset-0 opacity-20 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/14.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full"></div>
           <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full"></div>
@@ -334,8 +354,13 @@ export default function Home() {
       </section>
 
       {/* ===== E. 成功事例 ===== */}
-      <section id="voices" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421]">
-        <div className="max-w-7xl mx-auto">
+      <section id="voices" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 - 光と霜 */}
+        <div
+          className="absolute inset-0 opacity-15 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/11.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-10 scroll-animate">
             <div className="inline-block px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
               VOICE
@@ -428,8 +453,13 @@ export default function Home() {
       </section>
 
       {/* ===== F. 利用の流れ ===== */}
-      <section id="flow" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421]">
-        <div className="max-w-4xl mx-auto">
+      <section id="flow" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 - 宇宙/成長 */}
+        <div
+          className="absolute inset-0 opacity-20 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/5.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        <div className="max-w-4xl mx-auto relative">
           <div className="text-center mb-10 scroll-animate">
             <div className="inline-block px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
               FLOW
@@ -469,8 +499,13 @@ export default function Home() {
       </section>
 
       {/* ===== G. FAQ ===== */}
-      <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421]">
-        <div className="max-w-3xl mx-auto">
+      <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 */}
+        <div
+          className="absolute inset-0 opacity-10 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/17.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        <div className="max-w-3xl mx-auto relative">
           <div className="text-center mb-10 scroll-animate">
             <div className="inline-block px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
               FAQ
@@ -518,8 +553,13 @@ export default function Home() {
       </section>
 
       {/* ===== H. 申し込み手順 ===== */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421]">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+        {/* テクスチャ背景 - ホログラフィック */}
+        <div
+          className="absolute inset-0 opacity-15 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/12.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        <div className="max-w-3xl mx-auto relative">
           <div className="text-center mb-8 scroll-animate">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               <span className="text-yellow-400">30秒</span>で相談スタート
