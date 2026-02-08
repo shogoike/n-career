@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Inter } from "next/font/google";
 import "./globals.css";
+import Analytics from "./components/Analytics";
 
 /**
  * フォント設計の理由
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJP.variable} ${inter.variable} antialiased`}>
+        <Analytics />
         {children}
       </body>
     </html>

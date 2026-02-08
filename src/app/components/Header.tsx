@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { trackCTAClick } from "./Analytics";
 
 export default function Header() {
   return (
@@ -21,6 +22,7 @@ export default function Header() {
               href="https://lin.ee/z5If9Wl"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCTAClick("line_cta_header")}
               className="btn-line text-white px-5 py-2 rounded-full font-medium text-sm"
             >
               無料相談

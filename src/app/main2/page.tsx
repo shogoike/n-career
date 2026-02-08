@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { trackCTAClick } from "../components/Analytics";
 
 // キャッチコピーのバリエーション
 const CATCHPHRASES = [
@@ -109,6 +110,7 @@ function LineCTA({ size = "normal", className = "" }: { size?: "normal" | "large
       href="https://lin.ee/z5If9Wl"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackCTAClick("line_cta_orange")}
       className={`bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-full font-bold inline-flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all hover:shadow-xl hover:scale-105 ${
         isLarge ? "px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-xl" : "px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
       } ${className}`}
