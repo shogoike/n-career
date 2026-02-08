@@ -146,7 +146,8 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"></div>
 
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center animate-fade-in-up">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="text-center lg:text-left animate-fade-in-up">
             {/* バッジ */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-6 shadow-lg">
               <span className="animate-pulse-slow">🔥</span>
@@ -167,7 +168,7 @@ export default function Home() {
             </p>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
               <LineCTA size="large" />
               <a
                 href="/contact"
@@ -177,7 +178,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-green-200">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-green-200">
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -203,6 +204,19 @@ export default function Home() {
                 LINEだけでOK
               </span>
             </div>
+          </div>
+
+          {/* ヒーロー画像 */}
+          <div className="hidden lg:block relative animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="relative">
+              <img
+                src="/images/hero-runner.png"
+                alt="全力で走るアスリート"
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#014421]/50 to-transparent rounded-3xl"></div>
+            </div>
+          </div>
           </div>
         </div>
       </section>
@@ -459,7 +473,7 @@ export default function Home() {
           className="absolute inset-0 opacity-20 mix-blend-overlay"
           style={{ backgroundImage: 'url(/images/5.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         ></div>
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-10 scroll-animate">
             <div className="inline-block px-4 py-1 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
               FLOW
@@ -469,6 +483,19 @@ export default function Home() {
             </h2>
             <p className="text-green-200">最短<span className="text-yellow-400 font-bold">2週間</span>で内定獲得も可能</p>
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* アドバイザー画像 */}
+          <div className="hidden lg:block scroll-animate">
+            <img
+              src="/images/advisor.png"
+              alt="キャリアアドバイザー"
+              className="w-full h-auto rounded-3xl shadow-xl"
+            />
+            <p className="text-center text-green-200 mt-4 text-sm">専任アドバイザーが丁寧にサポート</p>
+          </div>
+
+          <div>
 
           <div className="space-y-0 scroll-animate">
             {[
@@ -494,6 +521,8 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          </div>
           </div>
         </div>
       </section>
