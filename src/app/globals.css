@@ -1,14 +1,31 @@
 @import "tailwindcss";
 
+/**
+ * カラー設計の理由
+ *
+ * 【濃い緑（#166534 / green-800）をベースに】
+ * - 安心感・信頼感：緑は心理学的に「安定」「成長」「安心」を連想させる
+ * - 体育会との相性：芝生、フィールド、自然を連想。アスリートに親和性が高い
+ * - 差別化：人材業界は青系が多い中、緑で記憶に残りやすい
+ * - LINE CTAとの調和：LINEの緑と近い色味で統一感
+ *
+ * 【アクセントカラー（オレンジ/イエロー）】
+ * - 行動喚起：CTAボタンで目立たせる
+ * - 緑との補色関係：視認性が高い
+ */
+
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --primary: #1e3a8a;
-  --primary-light: #3b82f6;
-  --accent: #f97316;
-  --accent-light: #fb923c;
-  --yellow: #fbbf24;
-  --aqua: #06b6d4;
+  /* 濃い緑ベース */
+  --primary: #166534;        /* green-800 - メインカラー */
+  --primary-light: #22c55e;  /* green-500 - アクセント */
+  --primary-dark: #14532d;   /* green-900 - 濃いめ */
+  /* アクセント（CTA用） */
+  --accent: #f97316;         /* orange-500 */
+  --accent-light: #fb923c;   /* orange-400 */
+  --yellow: #fbbf24;         /* yellow-400 */
+  /* その他 */
   --card-bg: #f8fafc;
   --card-border: #e2e8f0;
 }
@@ -18,134 +35,83 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --font-sans: var(--font-noto-sans-jp);
+  --font-number: var(--font-inter);
 }
 
+/**
+ * フォント設計の理由
+ *
+ * 【body - Noto Sans JP】
+ * - ゴシック体：力強さ、行動力、信頼感
+ * - 行間1.8：日本語の可読性を確保
+ *
+ * 【見出し - tracking-tight】
+ * - 字間を詰める：力強さ、凝縮感
+ *
+ * 【数字 - Inter】
+ * - 実績の数字を際立たせる
+ */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-noto-sans-jp), "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.8; /* 本文の行間：可読性重視 */
+  letter-spacing: 0.02em; /* 日本語は少し広めに */
+}
+
+/* 見出しのフォント設定 */
+h1, h2, h3 {
+  font-family: var(--font-noto-sans-jp), sans-serif;
+  line-height: 1.3; /* 見出しはコンパクトに */
+  letter-spacing: -0.02em; /* 字間を詰めて力強く */
+}
+
+/* 数字用フォント（実績表示など） */
+.font-number {
+  font-family: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
+  font-feature-settings: "tnum"; /* 等幅数字 */
 }
 
 /* ===== Animations ===== */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes countUp {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
 
-@keyframes shake {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-pulse-slow {
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.animate-bounce-slow {
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.animate-count-up {
-  animation: countUp 0.8s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-shake {
-  animation: shake 0.5s ease-in-out;
-}
-
-/* Shimmer effect for CTA buttons */
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shimmer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-pulse-slow { animation: pulse 3s ease-in-out infinite; }
+.animate-bounce-slow { animation: bounce 2s ease-in-out infinite; }
+.animate-count-up { animation: countUp 0.8s ease-out forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
 
 /* ===== Card Effects ===== */
 .bento-card {
@@ -158,7 +124,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Gradient Text ===== */
+/* ===== Gradient Text（緑ベース） ===== */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   -webkit-background-clip: text;
@@ -166,8 +132,8 @@ body {
   background-clip: text;
 }
 
-.gradient-text-yellow {
-  background: linear-gradient(135deg, var(--yellow) 0%, var(--accent) 100%);
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--yellow) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -175,15 +141,16 @@ body {
 
 /* ===== Button Styles ===== */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 10px 30px rgba(22, 101, 52, 0.4);
 }
 
+/* LINE CTAボタン */
 .btn-line {
   background: linear-gradient(135deg, #06c755 0%, #00b341 100%);
   transition: all 0.3s ease;
@@ -203,14 +170,20 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
+}
+
+/* アクセントボタン（オレンジ） */
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
 }
 
 /* ===== Scroll Animation ===== */
@@ -225,31 +198,24 @@ body {
   transform: translateY(0);
 }
 
-/* ===== Number Counter Effect ===== */
+/* ===== Number Highlight ===== */
 .number-highlight {
   display: inline-block;
   transition: all 0.3s ease;
+  font-family: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
 }
 
 .number-highlight:hover {
   transform: scale(1.1);
 }
 
-/* ===== Badge Pulse ===== */
-.badge-pulse {
-  position: relative;
+/* ===== Service Icon Hover ===== */
+.service-icon {
+  transition: all 0.3s ease;
 }
 
-.badge-pulse::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 12px;
-  height: 12px;
-  background: #ef4444;
-  border-radius: 50%;
-  animation: pulse 1.5s ease-in-out infinite;
+.service-icon:hover {
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* ===== Sticky CTA Bar ===== */
@@ -265,30 +231,4 @@ body {
 
 .sticky-cta.visible {
   transform: translateY(0);
-}
-
-/* ===== Service Icon Hover ===== */
-.service-icon {
-  transition: all 0.3s ease;
-}
-
-.service-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-/* ===== Step Line Animation ===== */
-.step-line {
-  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);
-  position: relative;
-}
-
-.step-line::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
-  animation: shimmer 2s infinite;
 }

@@ -110,16 +110,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-800 to-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
               <span className="font-bold text-xl text-gray-900">キャリア</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#services" className="text-gray-600 hover:text-blue-900 transition">サービス</a>
-              <a href="#voices" className="text-gray-600 hover:text-blue-900 transition">体験談</a>
-              <a href="#flow" className="text-gray-600 hover:text-blue-900 transition">ご利用の流れ</a>
-              <a href="#faq" className="text-gray-600 hover:text-blue-900 transition">よくある質問</a>
+              <a href="#services" className="text-gray-600 hover:text-green-800 transition">サービス</a>
+              <a href="#voices" className="text-gray-600 hover:text-green-800 transition">体験談</a>
+              <a href="#flow" className="text-gray-600 hover:text-green-800 transition">ご利用の流れ</a>
+              <a href="#faq" className="text-gray-600 hover:text-green-800 transition">よくある質問</a>
               <a
                 href="https://lin.ee/z5If9Wl"
                 target="_blank"
@@ -134,10 +134,10 @@ export default function Home() {
       </nav>
 
       {/* ===== A. ファーストビュー ===== */}
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 via-white to-white relative overflow-hidden">
+      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-green-50 via-white to-white relative overflow-hidden">
         {/* 背景装飾 */}
         <div className="absolute top-20 right-0 w-72 h-72 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center animate-fade-in-up">
@@ -157,7 +157,7 @@ export default function Home() {
 
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               競技に打ち込んできたあなたの強みを、<br className="hidden sm:block" />
-              <span className="font-bold text-blue-900">営業・エンジニア</span>として活かせる企業へつなぎます。
+              <span className="font-bold text-green-800">営業・エンジニア</span>として活かせる企業へつなぎます。
             </p>
 
             {/* CTA */}
@@ -165,7 +165,7 @@ export default function Home() {
               <LineCTA size="large" />
               <a
                 href="/contact"
-                className="px-8 py-5 rounded-full font-bold text-lg border-2 border-gray-300 text-gray-700 hover:border-blue-900 hover:text-blue-900 transition inline-flex items-center justify-center bg-white"
+                className="px-8 py-5 rounded-full font-bold text-lg border-2 border-gray-300 text-gray-700 hover:border-green-800 hover:text-green-800 transition inline-flex items-center justify-center bg-white"
               >
                 Webで相談する
               </a>
@@ -277,7 +277,7 @@ export default function Home() {
       </section>
 
       {/* ===== D. 根拠の提示（数字カウントアップ） ===== */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white relative overflow-hidden">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-800 via-green-700 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full"></div>
           <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full"></div>
@@ -295,29 +295,29 @@ export default function Home() {
               <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-1 number-highlight">
                 {successRate.count}<span className="text-2xl">%</span>
               </div>
-              <div className="text-blue-200 text-sm">未経験からの<br />転職成功率</div>
+              <div className="text-green-200 text-sm">未経験からの<br />転職成功率</div>
             </div>
             <div ref={successCount.ref} className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-1 number-highlight">
                 {successCount.count}<span className="text-2xl">+</span>
               </div>
-              <div className="text-blue-200 text-sm">転職成功者数</div>
+              <div className="text-green-200 text-sm">転職成功者数</div>
             </div>
             <div ref={satisfaction.ref} className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-1 number-highlight">
                 {satisfaction.count}<span className="text-2xl">%</span>
               </div>
-              <div className="text-blue-200 text-sm">利用者満足度</div>
+              <div className="text-green-200 text-sm">利用者満足度</div>
             </div>
             <div ref={salaryUp.ref} className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-1 number-highlight">
                 +{salaryUp.count}<span className="text-2xl">万</span>
               </div>
-              <div className="text-blue-200 text-sm">平均年収アップ</div>
+              <div className="text-green-200 text-sm">平均年収アップ</div>
             </div>
           </div>
 
-          <p className="text-center text-blue-300 text-xs mt-6">
+          <p className="text-center text-green-300 text-xs mt-6">
             ※ 2023年1月〜2024年12月の実績に基づく
           </p>
         </div>
@@ -336,7 +336,7 @@ export default function Home() {
       <section id="voices" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 scroll-animate">
-            <div className="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-bold mb-4">
+            <div className="inline-block px-4 py-1 bg-green-100 text-green-600 rounded-full text-sm font-bold mb-4">
               VOICE
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -349,7 +349,7 @@ export default function Home() {
             {[
               {
                 case: "01",
-                color: "from-blue-600 to-blue-800",
+                color: "from-green-600 to-green-800",
                 sport: "サッカー部",
                 job: "IT営業",
                 name: "Kさん（25歳）",
@@ -452,14 +452,14 @@ export default function Home() {
             ].map((item, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-green-800 text-white rounded-2xl flex items-center justify-center font-bold text-lg shadow-lg">
                     {item.icon}
                   </div>
-                  {index < 4 && <div className="w-1 h-16 bg-gradient-to-b from-blue-600 to-blue-300 rounded-full"></div>}
+                  {index < 4 && <div className="w-1 h-16 bg-gradient-to-b from-green-600 to-green-300 rounded-full"></div>}
                 </div>
                 <div className="flex-1 pb-8">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-blue-600 font-bold">STEP {item.step}</span>
+                    <span className="text-xs text-green-600 font-bold">STEP {item.step}</span>
                   </div>
                   <h3 className="font-bold text-gray-900 text-lg mb-1">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
@@ -494,7 +494,7 @@ export default function Home() {
               <details key={index} className="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-gray-200 transition">
                 <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
                   <span className="font-bold text-gray-900 flex items-center gap-3 text-left">
-                    <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">Q</span>
+                    <span className="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">Q</span>
                     {item.q}
                   </span>
                   <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -512,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* ===== CTA 3 ===== */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500 to-blue-600">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-green-600">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-white font-bold mb-4 text-lg">❓ 他にも気になることがあれば、お気軽にどうぞ</p>
           <LineCTA size="large" className="bg-white text-gray-900 hover:bg-gray-100" />
@@ -520,7 +520,7 @@ export default function Home() {
       </section>
 
       {/* ===== H. 申し込み手順 ===== */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-green-50 to-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8 scroll-animate">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -571,7 +571,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-400 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
               <span className="font-bold text-xl">キャリア</span>
