@@ -3,6 +3,66 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+// キャッチコピーのバリエーション
+const CATCHPHRASES = [
+  {
+    mobile: ["書類作成、面接対策、", "条件交渉——", "全部まるっと無料", "でサポート。"],
+    desktop: ["書類作成、面接対策、条件交渉——", "全部まるっと無料", "でサポート。"],
+    highlight: 2, // 黄色にするインデックス（0始まり）
+  },
+  {
+    mobile: ["未経験からでも", "年収UP を実現。", "体育会出身者の", "転職成功率92%"],
+    desktop: ["未経験からでも年収UPを実現。", "体育会出身者の", "転職成功率92%"],
+    highlight: 2,
+  },
+  {
+    mobile: ["競技で培った", "あなたの強みを", "次のキャリアの", "武器に変える。"],
+    desktop: ["競技で培ったあなたの強みを", "次のキャリアの", "武器に変える。"],
+    highlight: 2,
+  },
+  {
+    mobile: ["転職活動、", "ひとりで悩まない。", "体育会専門の", "プロがサポート。"],
+    desktop: ["転職活動、ひとりで悩まない。", "体育会専門の", "プロがサポート。"],
+    highlight: 2,
+  },
+  {
+    mobile: ["営業・エンジニアへ", "キャリアチェンジ。", "未経験9割が", "成功しています。"],
+    desktop: ["営業・エンジニアへキャリアチェンジ。", "未経験9割が", "成功しています。"],
+    highlight: 2,
+  },
+];
+
+// Cookie操作ユーティリティ
+function getCookie(name: string): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? match[2] : null;
+}
+
+function setCookie(name: string, value: string, days: number = 30) {
+  if (typeof document === "undefined") return;
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+// キャッチコピー選択フック
+function useCatchphrase() {
+  const [index, setIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const cookieIndex = getCookie("catchphrase_index");
+    if (cookieIndex !== null) {
+      setIndex(parseInt(cookieIndex, 10));
+    } else {
+      const randomIndex = Math.floor(Math.random() * CATCHPHRASES.length);
+      setCookie("catchphrase_index", randomIndex.toString(), 30);
+      setIndex(randomIndex);
+    }
+  }, []);
+
+  return index !== null ? CATCHPHRASES[index] : CATCHPHRASES[0];
+}
+
 // 数字カウントアップ用カスタムフック
 function useCountUp(end: number, duration: number = 2000, startOnView: boolean = true) {
   const [count, setCount] = useState(0);
@@ -67,6 +127,9 @@ function LineCTA({ size = "normal", className = "" }: { size?: "normal" | "large
 export default function Home() {
   const [showStickyCta, setShowStickyCta] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+
+  // ランダムキャッチコピー（Cookie制御）
+  const catchphrase = useCatchphrase();
 
   // 数字カウントアップ
   const successRate = useCountUp(92, 2000);
@@ -177,15 +240,29 @@ export default function Home() {
             <h1 className="text-[21px] sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-snug">
               {/* モバイル用 */}
               <span className="sm:hidden">
-                書類作成、面接対策、<br />
-                条件交渉——<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">全部まるっと無料</span><br />
-                でサポート。
+                {catchphrase.mobile.map((line, i) => (
+                  <span key={i}>
+                    {i === catchphrase.highlight ? (
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">{line}</span>
+                    ) : (
+                      line
+                    )}
+                    {i < catchphrase.mobile.length - 1 && <br />}
+                  </span>
+                ))}
               </span>
               {/* デスクトップ用 */}
               <span className="hidden sm:inline">
-                書類作成、面接対策、条件交渉——<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">全部まるっと無料</span>でサポート。
+                {catchphrase.desktop.map((line, i) => (
+                  <span key={i}>
+                    {i === catchphrase.highlight ? (
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">{line}</span>
+                    ) : (
+                      line
+                    )}
+                    {i < catchphrase.desktop.length - 1 && <br />}
+                  </span>
+                ))}
               </span>
             </h1>
 
