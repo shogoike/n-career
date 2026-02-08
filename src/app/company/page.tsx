@@ -8,37 +8,37 @@ export const metadata = {
 
 export default function CompanyPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#014421]">
       <Header />
 
       <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
             会社概要
           </h1>
 
-          <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden">
+          <div className="bg-white/10 backdrop-blur rounded-3xl border border-white/20 overflow-hidden">
             <table className="w-full">
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-white/10">
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium w-1/3">会社名</th>
-                  <td className="px-6 py-4 text-gray-900">株式会社Nキャリア</td>
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium w-1/3">会社名</th>
+                  <td className="px-6 py-4 text-white">株式会社Nキャリア</td>
                 </tr>
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium">代表者</th>
-                  <td className="px-6 py-4 text-gray-900">代表取締役 [お名前]</td>
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium">代表者</th>
+                  <td className="px-6 py-4 text-white">代表取締役 [お名前]</td>
                 </tr>
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium">設立</th>
-                  <td className="px-6 py-4 text-gray-900">2024年</td>
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium">設立</th>
+                  <td className="px-6 py-4 text-white">2024年</td>
                 </tr>
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium">所在地</th>
-                  <td className="px-6 py-4 text-gray-900">〒000-0000<br />東京都[住所]</td>
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium">所在地</th>
+                  <td className="px-6 py-4 text-white">〒000-0000<br />東京都[住所]</td>
                 </tr>
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium">事業内容</th>
-                  <td className="px-6 py-4 text-gray-900">
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium">事業内容</th>
+                  <td className="px-6 py-4 text-white">
                     <ul className="list-disc list-inside space-y-1">
                       <li>体育会・アスリート向け就職支援事業</li>
                       <li>キャリアカウンセリング事業</li>
@@ -47,20 +47,20 @@ export default function CompanyPage() {
                   </td>
                 </tr>
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium">許可番号</th>
-                  <td className="px-6 py-4 text-gray-900">有料職業紹介事業許可番号：[許可番号]</td>
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium">許可番号</th>
+                  <td className="px-6 py-4 text-white">有料職業紹介事業許可番号：[許可番号]</td>
                 </tr>
                 <tr>
-                  <th className="px-6 py-4 bg-gray-50 text-left text-gray-700 font-medium">お問い合わせ</th>
-                  <td className="px-6 py-4 text-gray-900">info@n-career.jp</td>
+                  <th className="px-6 py-4 bg-white/5 text-left text-green-200 font-medium">お問い合わせ</th>
+                  <td className="px-6 py-4 text-white">info@n-career.jp</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">ミッション</h2>
-            <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-8 rounded-3xl">
+            <h2 className="text-2xl font-bold text-white mb-6">ミッション</h2>
+            <div className="bg-yellow-400/20 border border-yellow-400/30 text-white p-8 rounded-3xl">
               <p className="text-xl leading-relaxed">
                 「すべてのアスリートに、輝くセカンドキャリアを」<br /><br />
                 私たちは、競技に打ち込んできたアスリートの皆さんが、
