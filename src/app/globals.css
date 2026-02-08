@@ -7,6 +7,8 @@
   --primary-light: #3b82f6;
   --accent: #f97316;
   --accent-light: #fb923c;
+  --yellow: #fbbf24;
+  --aqua: #06b6d4;
   --card-bg: #f8fafc;
   --card-border: #e2e8f0;
 }
@@ -27,7 +29,7 @@ body {
   font-family: var(--font-noto-sans-jp), "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
-/* Bento Grid Animations */
+/* ===== Animations ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -48,6 +50,56 @@ body {
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -56,7 +108,46 @@ body {
   animation: pulse 3s ease-in-out infinite;
 }
 
-/* Bento Card Hover Effects */
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.animate-count-up {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Shimmer effect for CTA buttons */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ===== Card Effects ===== */
 .bento-card {
   transition: all 0.3s ease;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -67,7 +158,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Gradient Text */
+/* ===== Gradient Text ===== */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   -webkit-background-clip: text;
@@ -75,7 +166,14 @@ body {
   background-clip: text;
 }
 
-/* Button Styles */
+.gradient-text-yellow {
+  background: linear-gradient(135deg, var(--yellow) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Button Styles ===== */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
   transition: all 0.3s ease;
@@ -86,7 +184,36 @@ body {
   box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
 }
 
-/* Scroll Animation Classes */
+.btn-line {
+  background: linear-gradient(135deg, #06c755 0%, #00b341 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-line:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);
+}
+
+.btn-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ===== Scroll Animation ===== */
 .scroll-animate {
   opacity: 0;
   transform: translateY(30px);
@@ -96,4 +223,72 @@ body {
 .scroll-animate.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== Number Counter Effect ===== */
+.number-highlight {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.number-highlight:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Badge Pulse ===== */
+.badge-pulse {
+  position: relative;
+}
+
+.badge-pulse::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ===== Sticky CTA Bar ===== */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+/* ===== Service Icon Hover ===== */
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== Step Line Animation ===== */
+.step-line {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);
+  position: relative;
+}
+
+.step-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
 }
