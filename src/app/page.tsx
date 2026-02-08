@@ -143,13 +143,13 @@ export default function Home() {
             </div>
 
             {/* Wide Card */}
-            <div className="bento-card lg:col-span-2 p-8 rounded-3xl border border-gray-200 scroll-animate bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+            <div className="lg:col-span-2 p-8 rounded-3xl scroll-animate bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3">リモートワークで競技継続</h3>
+                  <h3 className="text-2xl font-bold mb-3">現役×キャリア、両取りしよう</h3>
                   <p className="text-blue-100 text-lg">
-                    現役を続けながらキャリアも構築。フルリモート・フレックス勤務の求人で、
-                    競技とビジネスの両立を実現します。
+                    リモート・フレックス求人だけを厳選。練習・試合を優先しながら、
+                    ビジネススキルと収入を同時に手に入れる。
                   </p>
                 </div>
                 <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
