@@ -232,3 +232,95 @@ h1, h2, h3 {
 .sticky-cta.visible {
   transform: translateY(0);
 }
+
+/* ===== iPhone 15 / iOS Safe Area 対応 ===== */
+@supports (padding: env(safe-area-inset-top)) {
+  /* ナビゲーション - Dynamic Island対応 */
+  .nav-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* スティッキーCTA - ホームインジケーター対応 */
+  .sticky-cta {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ===== Mobile Optimizations (iPhone 15: 393px) ===== */
+@media (max-width: 430px) {
+  /* タッチターゲット最小44px確保 */
+  .btn-line, .btn-primary, .btn-accent {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* モバイルフォントサイズ最適化 */
+  h1 {
+    font-size: 1.75rem !important; /* 28px */
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important; /* 24px */
+  }
+
+  /* モバイルでのボタンホバー無効化（タップのみ） */
+  .btn-line:hover,
+  .btn-primary:hover,
+  .btn-accent:hover {
+    transform: none;
+  }
+
+  .btn-line:active,
+  .btn-primary:active,
+  .btn-accent:active {
+    transform: scale(0.98);
+  }
+
+  /* カードのホバー無効化 */
+  .service-icon:hover {
+    transform: none;
+  }
+
+  /* 数字セクション最適化 */
+  .number-highlight {
+    font-size: 2.5rem !important;
+  }
+
+  /* スクロールアニメーション軽量化 */
+  .scroll-animate {
+    transform: translateY(15px);
+  }
+}
+
+/* ===== 動画背景のモバイル最適化 ===== */
+@media (max-width: 768px) {
+  /* バッテリー節約：モバイルで動画を非表示にする場合はこちらを有効化 */
+  /* .video-bg { display: none; } */
+
+  /* 動画の透過度をモバイルで調整 */
+  video {
+    opacity: 0.2;
+  }
+}
+
+/* ===== Reduced Motion（アクセシビリティ） ===== */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-pulse-slow,
+  .animate-bounce-slow,
+  .animate-count-up,
+  .animate-float {
+    animation: none;
+  }
+
+  .scroll-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-line::after {
+    animation: none;
+  }
+}

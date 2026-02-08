@@ -44,7 +44,7 @@ function useCountUp(end: number, duration: number = 2000, startOnView: boolean =
   return { count, ref };
 }
 
-// LINE CTAコンポーネント
+// LINE CTAコンポーネント（iPhone最適化）
 function LineCTA({ size = "normal", className = "" }: { size?: "normal" | "large"; className?: string }) {
   const isLarge = size === "large";
   return (
@@ -52,14 +52,14 @@ function LineCTA({ size = "normal", className = "" }: { size?: "normal" | "large
       href="https://lin.ee/z5If9Wl"
       target="_blank"
       rel="noopener noreferrer"
-      className={`btn-line text-white rounded-full font-bold inline-flex items-center justify-center gap-2 shadow-lg ${
-        isLarge ? "px-10 py-5 text-xl" : "px-8 py-4 text-lg"
+      className={`btn-line text-white rounded-full font-bold inline-flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform ${
+        isLarge ? "px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-xl" : "px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
       } ${className}`}
     >
-      <svg className={isLarge ? "w-7 h-7" : "w-6 h-6"} viewBox="0 0 24 24" fill="currentColor">
+      <svg className={isLarge ? "w-6 h-6 sm:w-7 sm:h-7" : "w-5 h-5 sm:w-6 sm:h-6"} viewBox="0 0 24 24" fill="currentColor">
         <path d="M12.031 1.999c-5.522 0-10 4.478-10 10 0 1.904.532 3.681 1.453 5.197l-1.453 5.304 5.461-1.429a9.97 9.97 0 0 0 4.539 1.088c5.522 0 10-4.478 10-10s-4.478-10-10-10zm0 18.182a8.09 8.09 0 0 1-4.117-1.126l-.296-.176-3.065.803.817-2.983-.194-.308a8.057 8.057 0 0 1-1.236-4.303c0-4.479 3.644-8.123 8.123-8.123 4.479 0 8.123 3.644 8.123 8.123 0 4.479-3.644 8.123-8.155 8.093z"/>
       </svg>
-      LINEで無料相談する
+      <span className="whitespace-nowrap">LINEで無料相談</span>
     </a>
   );
 }
@@ -105,16 +105,28 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#014421]">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#014421]/95 backdrop-blur-md border-b border-white/10">
+      {/* Navigation - iPhone Safe Area対応 */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#014421]/95 backdrop-blur-md border-b border-white/10" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-14 sm:h-16">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">N</span>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg sm:text-xl">N</span>
               </div>
-              <span className="font-bold text-xl text-white">キャリア</span>
+              <span className="font-bold text-lg sm:text-xl text-white">キャリア</span>
             </div>
+            {/* モバイル: LINE CTAのみ表示 */}
+            <div className="md:hidden">
+              <a
+                href="https://lin.ee/z5If9Wl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-line text-white px-4 py-2 rounded-full font-medium text-sm"
+              >
+                無料相談
+              </a>
+            </div>
+            {/* デスクトップ: フルナビ */}
             <div className="hidden md:flex items-center gap-8">
               <a href="#services" className="text-green-200 hover:text-white transition">サービス</a>
               <a href="#voices" className="text-green-200 hover:text-white transition">体験談</a>
@@ -134,19 +146,19 @@ export default function Home() {
       </nav>
 
       {/* ===== A. ファーストビュー（ロイヤルグリーン背景 + 動画） ===== */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden min-h-[85vh] sm:min-h-0 flex items-center">
         {/* 背景動画 */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="video-bg absolute inset-0 w-full h-full object-cover opacity-20 sm:opacity-30"
         >
           <source src="/images/hero-video.mp4" type="video/mp4" />
         </video>
         {/* オーバーレイ */}
-        <div className="absolute inset-0 bg-[#014421]/70"></div>
+        <div className="absolute inset-0 bg-[#014421]/60 sm:bg-[#014421]/70"></div>
         {/* 背景装飾 */}
         <div className="absolute top-10 right-0 w-96 h-96 bg-green-400 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-400 rounded-full opacity-10 blur-3xl"></div>
@@ -162,14 +174,14 @@ export default function Home() {
               <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">未経験9割</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight">
               書類作成、面接対策、条件交渉——<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
                 全部まるっと無料
               </span>でサポート。
             </h1>
 
-            <p className="text-lg sm:text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-green-100 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
               競技に打ち込んできたあなたの強みを、<br className="hidden sm:block" />
               <span className="font-bold text-yellow-400">営業・エンジニア</span>として活かせる企業へつなぎます。
             </p>
@@ -245,7 +257,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 scroll-animate">
+          <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4 scroll-animate">
             {[
               { icon: "📝", label: "履歴書作成" },
               { icon: "📄", label: "職務経歴書" },
@@ -262,10 +274,10 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="service-icon text-center p-3 sm:p-4 rounded-2xl bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 hover:shadow-md cursor-default transition"
+                className="service-icon text-center p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 cursor-default transition"
               >
-                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{item.icon}</div>
-                <div className="text-xs sm:text-sm font-medium text-white">{item.label}</div>
+                <div className="text-xl sm:text-3xl mb-0.5 sm:mb-2">{item.icon}</div>
+                <div className="text-[10px] sm:text-sm font-medium text-white leading-tight">{item.label}</div>
               </div>
             ))}
           </div>
@@ -663,14 +675,17 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* ===== Sticky CTA（スクロール時表示） ===== */}
-      <div className={`sticky-cta ${showStickyCta ? "visible" : ""} bg-[#014421] border-t border-white/20 shadow-lg py-3 px-4`}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      {/* ===== Sticky CTA（スクロール時表示）- iPhone Safe Area対応 ===== */}
+      <div
+        className={`sticky-cta ${showStickyCta ? "visible" : ""} bg-[#014421] border-t border-white/20 shadow-lg py-3 px-4`}
+        style={{ paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-4">
           <div className="hidden sm:block">
             <div className="text-sm font-bold text-white">無料でキャリア相談</div>
             <div className="text-xs text-green-200">体育会専門アドバイザーが対応</div>
           </div>
-          <LineCTA className="flex-1 sm:flex-none" />
+          <LineCTA className="flex-1 sm:flex-none w-full sm:w-auto" />
         </div>
       </div>
     </div>
