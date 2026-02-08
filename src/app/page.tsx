@@ -448,10 +448,10 @@ export default function Home() {
               <span className="font-bold text-xl">キャリア</span>
             </div>
             <div className="flex flex-wrap justify-center gap-8 text-gray-400">
-              <a href="#" className="hover:text-white transition">会社概要</a>
-              <a href="#" className="hover:text-white transition">プライバシーポリシー</a>
-              <a href="#" className="hover:text-white transition">利用規約</a>
-              <a href="#" className="hover:text-white transition">お問い合わせ</a>
+              <a href="/company" className="hover:text-white transition">会社概要</a>
+              <a href="/privacy" className="hover:text-white transition">プライバシーポリシー</a>
+              <a href="/terms" className="hover:text-white transition">利用規約</a>
+              <a href="/contact" className="hover:text-white transition">お問い合わせ</a>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
