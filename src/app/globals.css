@@ -17,10 +17,10 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  /* 濃い緑ベース */
-  --primary: #166534;        /* green-800 - メインカラー */
-  --primary-light: #22c55e;  /* green-500 - アクセント */
-  --primary-dark: #14532d;   /* green-900 - 濃いめ */
+  /* ロイヤルグリーンベース */
+  --primary: #014421;        /* Royal Green - メインカラー */
+  --primary-light: #016332;  /* やや明るいグリーン - アクセント */
+  --primary-dark: #012b15;   /* より濃いグリーン */
   /* アクセント（CTA用） */
   --accent: #f97316;         /* orange-500 */
   --accent-light: #fb923c;   /* orange-400 */
@@ -124,9 +124,9 @@ h1, h2, h3 {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Gradient Text（緑ベース） ===== */
+/* ===== Gradient Text（ロイヤルグリーンベース） ===== */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background: linear-gradient(135deg, #014421 0%, #016332 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -141,13 +141,13 @@ h1, h2, h3 {
 
 /* ===== Button Styles ===== */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background: linear-gradient(135deg, #014421 0%, #016332 100%);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(22, 101, 52, 0.4);
+  box-shadow: 0 10px 30px rgba(1, 68, 33, 0.4);
 }
 
 /* LINE CTAボタン */

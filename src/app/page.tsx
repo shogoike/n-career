@@ -110,16 +110,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-800 to-green-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#014421] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
               <span className="font-bold text-xl text-gray-900">キャリア</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#services" className="text-gray-600 hover:text-green-800 transition">サービス</a>
-              <a href="#voices" className="text-gray-600 hover:text-green-800 transition">体験談</a>
-              <a href="#flow" className="text-gray-600 hover:text-green-800 transition">ご利用の流れ</a>
-              <a href="#faq" className="text-gray-600 hover:text-green-800 transition">よくある質問</a>
+              <a href="#services" className="text-gray-600 hover:text-[#014421] transition">サービス</a>
+              <a href="#voices" className="text-gray-600 hover:text-[#014421] transition">体験談</a>
+              <a href="#flow" className="text-gray-600 hover:text-[#014421] transition">ご利用の流れ</a>
+              <a href="#faq" className="text-gray-600 hover:text-[#014421] transition">よくある質問</a>
               <a
                 href="https://lin.ee/z5If9Wl"
                 target="_blank"
@@ -133,31 +133,32 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ===== A. ファーストビュー ===== */}
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-green-50 via-white to-white relative overflow-hidden">
+      {/* ===== A. ファーストビュー（ロイヤルグリーン背景） ===== */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[#014421] relative overflow-hidden">
         {/* 背景装飾 */}
-        <div className="absolute top-20 right-0 w-72 h-72 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute top-10 right-0 w-96 h-96 bg-green-400 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-400 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"></div>
 
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center animate-fade-in-up">
             {/* バッジ */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-6 shadow-md">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-6 shadow-lg">
               <span className="animate-pulse-slow">🔥</span>
               体育会・アスリート専門
               <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">未経験9割</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
               書類作成、面接対策、条件交渉——<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
                 全部まるっと無料
               </span>でサポート。
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-green-100 mb-8 max-w-2xl mx-auto">
               競技に打ち込んできたあなたの強みを、<br className="hidden sm:block" />
-              <span className="font-bold text-green-800">営業・エンジニア</span>として活かせる企業へつなぎます。
+              <span className="font-bold text-yellow-400">営業・エンジニア</span>として活かせる企業へつなぎます。
             </p>
 
             {/* CTA */}
@@ -165,33 +166,33 @@ export default function Home() {
               <LineCTA size="large" />
               <a
                 href="/contact"
-                className="px-8 py-5 rounded-full font-bold text-lg border-2 border-gray-300 text-gray-700 hover:border-green-800 hover:text-green-800 transition inline-flex items-center justify-center bg-white"
+                className="px-8 py-5 rounded-full font-bold text-lg border-2 border-white/30 text-white hover:bg-white hover:text-[#014421] transition inline-flex items-center justify-center"
               >
                 Webで相談する
               </a>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-green-200">
               <span className="flex items-center gap-1">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 完全無料
               </span>
               <span className="flex items-center gap-1">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 転職強制なし
               </span>
               <span className="flex items-center gap-1">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 秘密厳守
               </span>
               <span className="flex items-center gap-1">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 LINEだけでOK
@@ -277,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* ===== D. 根拠の提示（数字カウントアップ） ===== */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-800 via-green-700 to-blue-900 text-white relative overflow-hidden">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#014421] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full"></div>
           <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full"></div>
@@ -349,7 +350,7 @@ export default function Home() {
             {[
               {
                 case: "01",
-                color: "from-green-600 to-green-800",
+                color: "from-[#014421] to-[#016332]",
                 sport: "サッカー部",
                 job: "IT営業",
                 name: "Kさん（25歳）",
@@ -361,7 +362,7 @@ export default function Home() {
               },
               {
                 case: "02",
-                color: "from-green-600 to-green-800",
+                color: "from-[#014421] to-[#016332]",
                 sport: "野球部",
                 job: "Webエンジニア",
                 name: "Tさん（24歳）",
@@ -452,10 +453,10 @@ export default function Home() {
             ].map((item, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-green-800 text-white rounded-2xl flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div className="w-14 h-14 bg-[#014421] text-white rounded-2xl flex items-center justify-center font-bold text-lg shadow-lg">
                     {item.icon}
                   </div>
-                  {index < 4 && <div className="w-1 h-16 bg-gradient-to-b from-green-600 to-green-300 rounded-full"></div>}
+                  {index < 4 && <div className="w-1 h-16 bg-gradient-to-b from-[#014421] to-green-300 rounded-full"></div>}
                 </div>
                 <div className="flex-1 pb-8">
                   <div className="flex items-center gap-2 mb-1">
@@ -512,7 +513,7 @@ export default function Home() {
       </section>
 
       {/* ===== CTA 3 ===== */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-green-600">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[#014421]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-white font-bold mb-4 text-lg">❓ 他にも気になることがあれば、お気軽にどうぞ</p>
           <LineCTA size="large" className="bg-white text-gray-900 hover:bg-gray-100" />
@@ -545,7 +546,7 @@ export default function Home() {
                 { step: "3", text: "担当から面談日程のご連絡", icon: "📅" },
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-                  <span className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full flex items-center justify-center font-bold shadow-md">
+                  <span className="w-10 h-10 bg-[#014421] text-white rounded-full flex items-center justify-center font-bold shadow-md">
                     {item.step}
                   </span>
                   <span className="text-gray-700 font-medium flex-1">{item.text}</span>
@@ -567,23 +568,23 @@ export default function Home() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-[#014421] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-400 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
               <span className="font-bold text-xl">キャリア</span>
             </Link>
-            <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
+            <div className="flex flex-wrap justify-center gap-6 text-green-200 text-sm">
               <Link href="/company" className="hover:text-white transition">会社概要</Link>
               <Link href="/privacy" className="hover:text-white transition">プライバシーポリシー</Link>
               <Link href="/terms" className="hover:text-white transition">利用規約</Link>
               <Link href="/contact" className="hover:text-white transition">お問い合わせ</Link>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-green-200 text-sm">
             <p>&copy; 2024 Nキャリア. All rights reserved.</p>
           </div>
         </div>
